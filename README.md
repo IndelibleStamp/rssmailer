@@ -1,0 +1,2 @@
+# rssmailer
+RSS Digest Emailer
