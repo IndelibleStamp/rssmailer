@@ -20,11 +20,6 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-feeds = [
-    'https://soylentnews.org/index.atom',
-    'http://feeds2.feedburner.com/3quarksdaily'
-]
-
 
 def get_url(url):
     log.info('Fetching URL: {}'.format(url))
@@ -87,12 +82,12 @@ if __name__ == '__main__':
     try:
         f = open(CONFIG_FILE, 'r')
     except IOError:
-        log.error('Please set up ~/.rssmailer.json. See rssmailer.json.sample for an example.')
+        log.error('Please set up ~/.rssmailer.json and retry..')
         raise SystemExit
     try:
         CONFIG = json.load(f)
     except ValueError:
-        log.error('Error parsing ~/.rssmailer.json. Please correct the configuration and retry.')
+        log.error('Error parsing ~/.rssmailer.json. Please correct and retry.')
         raise SystemExit
 
     log.info('CONFIG is {}'.format(CONFIG))
