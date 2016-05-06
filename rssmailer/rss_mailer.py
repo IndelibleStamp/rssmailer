@@ -9,13 +9,6 @@ import json
 import logging
 import sys
 
-# import logging
-# import sys
-# log = logging.getLogger('rss_mailer')
-# out_hdlr = logging.StreamHandler(sys.stdout)
-# log.addHandler(out_hdlr)
-# log.setLevel(logging.DEBUG)
-
 # bah, utf-8
 reload(sys)
 sys.setdefaultencoding('utf-8')
