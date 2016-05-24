@@ -29,7 +29,7 @@ install_requires = [
 ]
 
 
-version = '0.2'
+version = '0.3'
 
 setup(
     name='rssmailer',
