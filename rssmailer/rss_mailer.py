@@ -48,12 +48,11 @@ def send_mail(result):
     mailgun_url = str(CONFIG['mailgun_url'])
     mail_to = str(CONFIG['mail_to'])
     mail_from = str(CONFIG['mail_from'])
-
     for entry in result:
         title = entry.title
         content = entry.entries_to_mail
         if not content:
-            break
+            continue
         log.info('Sending email for {}'.format(title))
         m = MailGun(api_key, mailgun_url, mail_to, mail_from, title, content)
         m.build_html_message()
