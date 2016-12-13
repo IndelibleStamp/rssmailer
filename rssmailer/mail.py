@@ -31,7 +31,7 @@ class MailGun(object):
             requests.post(
                 self.mailgun_url,
                 auth=("api", self.api_key),
-                data={"from": self.title,
+                data={"from": self.title + "<" + self.mail_from + ">",
                       "to": self.mail_to,
                       "subject": "Digest mail for " + self.title,
                       "html": self.output_text})
